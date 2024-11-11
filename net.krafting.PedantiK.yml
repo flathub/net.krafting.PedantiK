@@ -64,6 +64,6 @@ modules:
 
       - type: git
         url: https://gitlab.com/Krafting/PedantiK
-        tag: '1.1.0-1'
-        commit: e474c4e14807e2cad7550e927c963e7fae3eb371
+        tag: '1.2.0'
+        commit: df9186296671e40d48259bdafb4a98d573a680af
 
