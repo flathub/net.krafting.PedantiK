@@ -66,8 +66,7 @@ modules:
         url: https://gitlab.com/Krafting/PedantiK
         tag: '1.2.1'
         commit: 80af735b1ceceb28031d6cb5505e9edec7fe7b38
-        x-checker-data: {
+        x-checker-data:
           type: git,
-          tag-pattern: '^([\\d.]+)$'
-        }
+          tag-pattern: '^([\d.]+)$'
 
