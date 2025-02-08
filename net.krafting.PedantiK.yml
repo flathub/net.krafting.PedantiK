@@ -15,12 +15,12 @@ modules:
     buildsystem: cmake-ninja
     builddir: true
     config-opts:
-    - -DBUILD_SHARED_LIBS=ON
-    - -DBUILD_TESTING=OFF
+      - -DBUILD_SHARED_LIBS=ON
+      - -DBUILD_TESTING=OFF
     sources:
       - type: git
         url: https://github.com/OpenMathLib/OpenBLAS
-        tag: 'v0.3.28'
+        tag: v0.3.28
         commit: 5ef8b1964658f9cb6a6324a06f6a1a022609b0c5
 
   - name: meson-python
@@ -30,7 +30,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/mesonbuild/meson-python
-        tag: '0.15.0'
+        tag: 0.15.0
         commit: e847bdd918ba6686d9b0502e9ee6d83d5145ae84
 
   - python3-pyproject_metadata.json
@@ -64,7 +64,7 @@ modules:
 
       - type: git
         url: https://gitlab.com/Krafting/PedantiK
-        tag: '1.2.1'
-        commit: 80af735b1ceceb28031d6cb5505e9edec7fe7b38
+        tag: 1.2.2
+        commit: 1396e6f3f1732817a84d5244540632f5508ad368
         x-checker-data: {type: git, tag-pattern: '^([\d.]+)$'}
 
