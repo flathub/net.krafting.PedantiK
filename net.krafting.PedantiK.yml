@@ -10,6 +10,16 @@ finish-args:
   - --socket=wayland
   - --socket=fallback-x11
 
+add-extensions:
+  net.krafting.PedantiK.Lang:
+    directory: share/extra
+    subdirectories: true
+    no-autodownload: true
+    autodelete: true
+
+cleanup-commands:
+  - mkdir -p /app/share/extra
+
 modules:
   - name: OpenBLAS
     buildsystem: cmake-ninja
@@ -52,11 +62,13 @@ modules:
     build-commands:
       - install -Dm755 PedantiK.py /app/bin/PedantiK.py
       - cp -r utils/ /app/bin/utils/
-      - install -Dm755 languages/French/options.py /app/bin/languages/French/options.py
-      - install -Dm 0644 frWac_non_lem_no_postag_no_phrase_200_cbow_cut100.bin  /app/models/frWac_non_lem_no_postag_no_phrase_200_cbow_cut100.bin
+      - cp -r locales /app/
+      - cp -r languages /app/bin/
+      - install -Dm 0644 frWac_non_lem_no_postag_no_phrase_200_cbow_cut100.bin  /app/default/Français/model.bin
       - install -Dm 0644 net.krafting.PedantiK.desktop  /app/share/applications/net.krafting.PedantiK.desktop
       - install -Dm 0644 net.krafting.PedantiK.metainfo.xml  /app/share/metainfo/net.krafting.PedantiK.metainfo.xml
       - install -Dm 0644 images/net.krafting.PedantiK.svg /app/share/icons/hicolor/scalable/apps/net.krafting.PedantiK.svg
+      - install -Dm 0644 images/language-symbolic.svg /app/share/icons/hicolor/scalable/apps/language-symbolic.svg
     sources:
       - type: file
         url: https://embeddings.net/embeddings/frWac_non_lem_no_postag_no_phrase_200_cbow_cut100.bin
