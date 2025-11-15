@@ -38,8 +38,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenMathLib/OpenBLAS
-        tag: v0.3.28
-        commit: 5ef8b1964658f9cb6a6324a06f6a1a022609b0c5
+        tag: 'v0.3.30'
+        commit: 993fad6aebbce34a97d3f8c34d6d79d35b64cc48
 
   - name: meson-python
     buildsystem: meson
