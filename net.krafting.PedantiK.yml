@@ -27,12 +27,11 @@ modules:
     config-opts:
     - -DBUILD_SHARED_LIBS=ON
     - -DBUILD_TESTING=OFF
-    - -DCMAKE_CXX_FLAGS_RELEASE="-O2 -DNDEBUG"
     sources:
       - type: git
         url: https://github.com/OpenMathLib/OpenBLAS
-        tag: 'v0.3.30'
-        commit: 993fad6aebbce34a97d3f8c34d6d79d35b64cc48
+        tag: 'v0.3.29'
+        commit: 8795fc7985635de1ecf674b87e2008a15097ffab
 
   - name: meson-python
     buildsystem: meson
