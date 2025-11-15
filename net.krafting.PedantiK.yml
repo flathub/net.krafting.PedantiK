@@ -23,18 +23,12 @@ cleanup-commands:
 modules:
   - name: OpenBLAS
     buildsystem: cmake-ninja
-    builddir: true
+    # builddir: true
     config-opts:
     - -DBUILD_SHARED_LIBS=ON
     - -DBUILD_TESTING=OFF
     cleanup:
-      - /bin
-      - /include
-      - /lib/cmake
-      - /lib/*.a
-      - /lib/*.la
-      - /lib/pkgconfig
-      - /share/man
+      - /
     sources:
       - type: git
         url: https://github.com/OpenMathLib/OpenBLAS
