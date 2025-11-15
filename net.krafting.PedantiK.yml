@@ -87,6 +87,6 @@ modules:
       - type: git
         url: https://gitlab.com/Krafting/PedantiK
         tag: 1.4.0
-        commit: efd5cc691d80a006a8d2f14d9cad9982a93d9873
+        commit: 15626c616674898b9f8262579402255a24efd697 
         x-checker-data: {type: git, tag-pattern: '^([\d.]+)$'}
 
