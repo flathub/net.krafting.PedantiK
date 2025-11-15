@@ -1,6 +1,6 @@
 app-id: net.krafting.PedantiK
 runtime: org.gnome.Platform
-runtime-version: '47'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 command: PedantiK.py
 finish-args:
