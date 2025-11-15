@@ -27,6 +27,7 @@ modules:
     config-opts:
     - -DBUILD_SHARED_LIBS=ON
     - -DBUILD_TESTING=OFF
+    - -DCMAKE_CXX_FLAGS_RELEASE="-O2 -DNDEBUG"
     sources:
       - type: git
         url: https://github.com/OpenMathLib/OpenBLAS
