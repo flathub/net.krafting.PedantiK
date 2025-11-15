@@ -27,7 +27,7 @@ modules:
     config-opts:
     - -DBUILD_SHARED_LIBS=ON
     # - -DDYNAMIC_ARCH=ON
-    # - -DTARGET=ARMV8
+    - -DTARGET=ARMV8
     - -DBUILD_TESTING=OFF
     sources:
       - type: archive
