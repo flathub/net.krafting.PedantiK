@@ -1,6 +1,6 @@
 app-id: net.krafting.PedantiK
 runtime: org.gnome.Platform
-runtime-version: '47'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 command: PedantiK.py
 finish-args:
@@ -26,6 +26,8 @@ modules:
     builddir: true
     config-opts:
       - -DBUILD_SHARED_LIBS=ON
+      - -DDYNAMIC_ARCH=ON
+    # - -DTARGET=ARMV8
       - -DBUILD_TESTING=OFF
     cleanup:
       - /bin
@@ -46,13 +48,11 @@ modules:
 
   - name: meson-python
     buildsystem: meson
-    cleanup:
-      - '*'
     sources:
       - type: git
         url: https://github.com/mesonbuild/meson-python
-        tag: 0.15.0
-        commit: e847bdd918ba6686d9b0502e9ee6d83d5145ae84
+        tag: 0.18.0
+        commit: e094949f466ae69043fcec3ec68b41ace900ed97
 
   - python3-pyproject_metadata.json
 
@@ -62,7 +62,19 @@ modules:
 
   - python3-pybind11.json
 
-  - python3-gensim.json
+  - python3-scipy.json
+
+  - python3-smart_open.json
+
+  - name: Gensim
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-build-isolation --prefix=/app .
+    sources:
+      - type: git
+        url: https://github.com/piskvorky/gensim
+        tag: 4.4.0
+        commit: ee2642b4fa26e689ba4595067504668bc7a89016
 
   - python3-requests.json
 
@@ -79,7 +91,7 @@ modules:
       - install -Dm 0644 net.krafting.PedantiK.desktop  /app/share/applications/net.krafting.PedantiK.desktop
       - install -Dm 0644 net.krafting.PedantiK.metainfo.xml  /app/share/metainfo/net.krafting.PedantiK.metainfo.xml
       - install -Dm 0644 images/net.krafting.PedantiK.svg /app/share/icons/hicolor/scalable/apps/net.krafting.PedantiK.svg
-      - install -Dm 0644 images/language-symbolic.svg /app/share/icons/hicolor/scalable/apps/language-symbolic.svg
+      - install -Dm 0644 images/icons-symbolic/* /app/share/icons/hicolor/scalable/apps/
     sources:
       - type: file
         url: https://embeddings.net/embeddings/frWac_non_lem_no_postag_no_phrase_200_cbow_cut100.bin
@@ -87,7 +99,7 @@ modules:
 
       - type: git
         url: https://gitlab.com/Krafting/PedantiK
-        tag: 1.3.0
-        commit: c8150490eb9725fdd3a15e42b797a207a9939e31
+        tag: 1.4.3
+        commit: 1ed647a3be8d59a1779794d86d2b5e8f6aed707e
         x-checker-data: {type: git, tag-pattern: '^([\d.]+)$'}
 
