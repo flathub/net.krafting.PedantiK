@@ -25,10 +25,10 @@ modules:
     buildsystem: cmake-ninja
     builddir: true
     config-opts:
-    - -DBUILD_SHARED_LIBS=ON
-    - -DDYNAMIC_ARCH=ON
+      - -DBUILD_SHARED_LIBS=ON
+      - -DDYNAMIC_ARCH=ON
     # - -DTARGET=ARMV8
-    - -DBUILD_TESTING=OFF
+      - -DBUILD_TESTING=OFF
     sources:
       - type: archive
         url: https://github.com/OpenMathLib/OpenBLAS/releases/download/v0.3.29/OpenBLAS-0.3.29.tar.gz
@@ -39,7 +39,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/mesonbuild/meson-python
-        tag: '0.18.0'
+        tag: 0.18.0
         commit: e094949f466ae69043fcec3ec68b41ace900ed97
 
   - python3-pyproject_metadata.json
@@ -61,7 +61,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/piskvorky/gensim
-        tag: '4.4.0'
+        tag: 4.4.0
         commit: ee2642b4fa26e689ba4595067504668bc7a89016
 
   - python3-requests.json
@@ -79,7 +79,7 @@ modules:
       - install -Dm 0644 net.krafting.PedantiK.desktop  /app/share/applications/net.krafting.PedantiK.desktop
       - install -Dm 0644 net.krafting.PedantiK.metainfo.xml  /app/share/metainfo/net.krafting.PedantiK.metainfo.xml
       - install -Dm 0644 images/net.krafting.PedantiK.svg /app/share/icons/hicolor/scalable/apps/net.krafting.PedantiK.svg
-      - install -Dm 0644 images/language-symbolic.svg /app/share/icons/hicolor/scalable/apps/language-symbolic.svg
+      - install -Dm 0644 images/icons-symbolic/* /app/share/icons/hicolor/scalable/apps/
     sources:
       - type: file
         url: https://embeddings.net/embeddings/frWac_non_lem_no_postag_no_phrase_200_cbow_cut100.bin
@@ -87,7 +87,7 @@ modules:
 
       - type: git
         url: https://gitlab.com/Krafting/PedantiK
-        tag: 1.4.1
-        commit: b506c7f3d8456e18b694df2a446fdb3f31021799 
+        tag: 1.4.3
+        commit: 1ed647a3be8d59a1779794d86d2b5e8f6aed707e
         x-checker-data: {type: git, tag-pattern: '^([\d.]+)$'}
 
