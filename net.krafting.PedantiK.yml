@@ -79,7 +79,7 @@ modules:
       - install -Dm 0644 net.krafting.PedantiK.desktop  /app/share/applications/net.krafting.PedantiK.desktop
       - install -Dm 0644 net.krafting.PedantiK.metainfo.xml  /app/share/metainfo/net.krafting.PedantiK.metainfo.xml
       - install -Dm 0644 images/net.krafting.PedantiK.svg /app/share/icons/hicolor/scalable/apps/net.krafting.PedantiK.svg
-      - install -Dm 0644 images/language-symbolic.svg /app/share/icons/hicolor/scalable/apps/language-symbolic.svg
+      - install -Dm 0644 images/icons-symbolic/* /app/share/icons/hicolor/scalable/apps/
     sources:
       - type: file
         url: https://embeddings.net/embeddings/frWac_non_lem_no_postag_no_phrase_200_cbow_cut100.bin
