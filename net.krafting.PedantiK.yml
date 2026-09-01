@@ -27,20 +27,20 @@ modules:
     config-opts:
       - -DBUILD_SHARED_LIBS=ON
       - -DDYNAMIC_ARCH=ON
-    # - -DTARGET=ARMV8
       - -DBUILD_TESTING=OFF
     sources:
-      - type: archive
-        url: https://github.com/OpenMathLib/OpenBLAS/releases/download/v0.3.29/OpenBLAS-0.3.29.tar.gz
-        sha512: 046316b4297460bffca09c890ecad17ea39d8b3db92ff445d03b547dd551663d37e40f38bce8ae11e2994374ff01e622b408da27aa8e40f4140185ee8f001a60
+      - type: git
+        url: https://github.com/OpenMathLib/OpenBLAS
+        tag: v0.3.34
+        commit: e0166008be8e466242aa76b2ff75ce3f0fbf574a
 
   - name: meson-python
     buildsystem: meson
     sources:
       - type: git
         url: https://github.com/mesonbuild/meson-python
-        tag: 0.18.0
-        commit: e094949f466ae69043fcec3ec68b41ace900ed97
+        tag: 0.20.0
+        commit: 9f207c9d2abce567d643b0fa3d0f1e4a5d5866d7
 
   - python3-pyproject_metadata.json
 
@@ -75,19 +75,15 @@ modules:
       - cp -r utils/ /app/bin/utils/
       - cp -r locales /app/
       - cp -r languages /app/bin/
-      - install -Dm 0644 frWac_non_lem_no_postag_no_phrase_200_cbow_cut100.bin  /app/default/Français/model.bin
       - install -Dm 0644 net.krafting.PedantiK.desktop  /app/share/applications/net.krafting.PedantiK.desktop
       - install -Dm 0644 net.krafting.PedantiK.metainfo.xml  /app/share/metainfo/net.krafting.PedantiK.metainfo.xml
       - install -Dm 0644 images/net.krafting.PedantiK.svg /app/share/icons/hicolor/scalable/apps/net.krafting.PedantiK.svg
       - install -Dm 0644 images/icons-symbolic/* /app/share/icons/hicolor/scalable/apps/
     sources:
-      - type: file
-        url: https://embeddings.net/embeddings/frWac_non_lem_no_postag_no_phrase_200_cbow_cut100.bin
-        sha256: d51f3259d1f6fe12155a447623a82695c6d72916b1b61e150e2715c034b6c880
 
       - type: git
         url: https://gitlab.com/Krafting/PedantiK
-        tag: 1.5.2
-        commit: d20745604a911bf1ca07ab3170635e64a3441907
+        tag: 1.6.0
+        commit: 6172ffdcc0907cf9b44b7bb3fb173e01b585f2bb
         x-checker-data: {type: git, tag-pattern: '^([\d.]+)$'}
 
